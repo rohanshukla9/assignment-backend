@@ -23,4 +23,9 @@ class PostController extends Controller
     {
         return $request->user()->posts()->create($request->only(['body']));
     }
+
+    public function delete(Request $request, Post $post)
+    {
+        return $request->user()->posts()->delete($post);
+    }
 }
