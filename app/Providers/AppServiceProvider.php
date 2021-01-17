@@ -27,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         UserResource::withoutWrapping();
-        PostResource::withoutWrapping();
+        //PostResource::withoutWrapping();
     }
 }

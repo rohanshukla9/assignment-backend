@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -24,7 +25,8 @@ class PostFactory extends Factory
         return [
             'user_id' => 1,
             'body' => $this->faker->sentence(3),
-            'minutes' => 5,
+            'minutes' => $minutes = 5,
+            'expires_on' => Carbon::now()->addMinutes($minutes),
         ];
     }
 }
